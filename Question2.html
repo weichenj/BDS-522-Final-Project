@@ -212,8 +212,8 @@ $(document).ready(function () {
 <div id="i-want-to-know-the-bmis-relation-with-physical-health-and-mental-health." class="section level1">
 <h1>I want to know the BMI’s relation with Physical health and Mental Health.</h1>
 </div>
-<div id="buid-a-regression-among-bmi-and-variable-of-income-and-sleep-time." class="section level1">
-<h1>Buid a regression among BMI and variable of Income and Sleep time.</h1>
+<div id="i-also-want-to-buid-a-regression-among-bmi-and-variable-of-income-and-sleep-time." class="section level1">
+<h1>I also want to Buid a regression among BMI and variable of Income and Sleep time.</h1>
 <pre class="r"><code>ggplot(brfss2013, aes(income2, fill = X_bmi5))+geom_bar(position = &quot;stack&quot;)</code></pre>
 <p><img src="Question2_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <pre class="r"><code>summary(lm(brfss2013$X_bmi5 ~ factor(brfss2013$income2)*brfss2013$sleptim1))</code></pre>
@@ -309,6 +309,98 @@ $(document).ready(function () {
 </div>
 <div id="from-the-regreesion-above-we-can-see-that-among-all-the-factor-only-the-income-more-than-75000-per-year-and-less-15000-per-year-indiviuals-has-positively-significance-for-bmi-and-the-interpetation-would-be-keep-the-sleeping-time-zero-hour-and-income-less-than-15000-per-year-increase-58-in-bmi-and-keep-the-sleeping-time-zero-hour-and-income-more-than-75000-per-year-increases-the-bmi-for-10.404." class="section level1">
 <h1>From the regreesion above, we can see that among all the factor, only the income more than 75000 per year and less 15000 per year indiviuals has positively significance for BMI and the interpetation would be Keep the sleeping time zero hour, and income less than $15000 per year, increase 58 in BMI, and keep the sleeping time zero hour, and income more than $75000 per year, increases the BMI for 10.404.</h1>
+</div>
+<div id="from-the-plot-we-can-see-that-the-distribtion-of-residuals-is-not-good-and-violate-our-assumption-of-regression." class="section level1">
+<h1>From the plot, we can see that the distribtion of residuals is not good, and violate our assumption of regression.</h1>
+<pre class="r"><code>#I want to test the regression without interaction, here is the regression
+summary(lm(brfss2013$X_bmi5 ~ factor(brfss2013$income2)*brfss2013$sleptim1))</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = brfss2013$X_bmi5 ~ factor(brfss2013$income2) * brfss2013$sleptim1)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -2844.5  -413.6   -98.5   298.4  6938.1 
+## 
+## Coefficients:
+##                                                               Estimate
+## (Intercept)                                                   2931.938
+## factor(brfss2013$income2)Less than $15,000                      58.442
+## factor(brfss2013$income2)Less than $20,000                       5.574
+## factor(brfss2013$income2)Less than $25,000                      16.113
+## factor(brfss2013$income2)Less than $35,000                      33.932
+## factor(brfss2013$income2)Less than $50,000                      30.643
+## factor(brfss2013$income2)Less than $75,000                      55.802
+## factor(brfss2013$income2)$75,000 or more                        10.404
+## brfss2013$sleptim1                                              -7.003
+## factor(brfss2013$income2)Less than $15,000:brfss2013$sleptim1   -9.208
+## factor(brfss2013$income2)Less than $20,000:brfss2013$sleptim1   -5.905
+## factor(brfss2013$income2)Less than $25,000:brfss2013$sleptim1  -10.120
+## factor(brfss2013$income2)Less than $35,000:brfss2013$sleptim1  -15.046
+## factor(brfss2013$income2)Less than $50,000:brfss2013$sleptim1  -14.937
+## factor(brfss2013$income2)Less than $75,000:brfss2013$sleptim1  -21.020
+## factor(brfss2013$income2)$75,000 or more:brfss2013$sleptim1    -25.273
+##                                                               Std. Error
+## (Intercept)                                                       13.923
+## factor(brfss2013$income2)Less than $15,000                        20.260
+## factor(brfss2013$income2)Less than $20,000                        19.655
+## factor(brfss2013$income2)Less than $25,000                        19.564
+## factor(brfss2013$income2)Less than $35,000                        19.708
+## factor(brfss2013$income2)Less than $50,000                        19.399
+## factor(brfss2013$income2)Less than $75,000                        19.951
+## factor(brfss2013$income2)$75,000 or more                          18.157
+## brfss2013$sleptim1                                                 1.946
+## factor(brfss2013$income2)Less than $15,000:brfss2013$sleptim1      2.822
+## factor(brfss2013$income2)Less than $20,000:brfss2013$sleptim1      2.730
+## factor(brfss2013$income2)Less than $25,000:brfss2013$sleptim1      2.721
+## factor(brfss2013$income2)Less than $35,000:brfss2013$sleptim1      2.741
+## factor(brfss2013$income2)Less than $50,000:brfss2013$sleptim1      2.704
+## factor(brfss2013$income2)Less than $75,000:brfss2013$sleptim1      2.789
+## factor(brfss2013$income2)$75,000 or more:brfss2013$sleptim1        2.541
+##                                                               t value
+## (Intercept)                                                   210.578
+## factor(brfss2013$income2)Less than $15,000                      2.885
+## factor(brfss2013$income2)Less than $20,000                      0.284
+## factor(brfss2013$income2)Less than $25,000                      0.824
+## factor(brfss2013$income2)Less than $35,000                      1.722
+## factor(brfss2013$income2)Less than $50,000                      1.580
+## factor(brfss2013$income2)Less than $75,000                      2.797
+## factor(brfss2013$income2)$75,000 or more                        0.573
+## brfss2013$sleptim1                                             -3.599
+## factor(brfss2013$income2)Less than $15,000:brfss2013$sleptim1  -3.262
+## factor(brfss2013$income2)Less than $20,000:brfss2013$sleptim1  -2.163
+## factor(brfss2013$income2)Less than $25,000:brfss2013$sleptim1  -3.719
+## factor(brfss2013$income2)Less than $35,000:brfss2013$sleptim1  -5.490
+## factor(brfss2013$income2)Less than $50,000:brfss2013$sleptim1  -5.525
+## factor(brfss2013$income2)Less than $75,000:brfss2013$sleptim1  -7.538
+## factor(brfss2013$income2)$75,000 or more:brfss2013$sleptim1    -9.948
+##                                                               Pr(&gt;|t|)    
+## (Intercept)                                                    &lt; 2e-16 ***
+## factor(brfss2013$income2)Less than $15,000                    0.003920 ** 
+## factor(brfss2013$income2)Less than $20,000                    0.776710    
+## factor(brfss2013$income2)Less than $25,000                    0.410156    
+## factor(brfss2013$income2)Less than $35,000                    0.085113 .  
+## factor(brfss2013$income2)Less than $50,000                    0.114199    
+## factor(brfss2013$income2)Less than $75,000                    0.005160 ** 
+## factor(brfss2013$income2)$75,000 or more                      0.566664    
+## brfss2013$sleptim1                                            0.000319 ***
+## factor(brfss2013$income2)Less than $15,000:brfss2013$sleptim1 0.001105 ** 
+## factor(brfss2013$income2)Less than $20,000:brfss2013$sleptim1 0.030531 *  
+## factor(brfss2013$income2)Less than $25,000:brfss2013$sleptim1 0.000200 ***
+## factor(brfss2013$income2)Less than $35,000:brfss2013$sleptim1 4.02e-08 ***
+## factor(brfss2013$income2)Less than $50,000:brfss2013$sleptim1 3.30e-08 ***
+## factor(brfss2013$income2)Less than $75,000:brfss2013$sleptim1 4.78e-14 ***
+## factor(brfss2013$income2)$75,000 or more:brfss2013$sleptim1    &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 612.6 on 399856 degrees of freedom
+##   (91903 observations deleted due to missingness)
+## Multiple R-squared:  0.01066,    Adjusted R-squared:  0.01062 
+## F-statistic: 287.1 on 15 and 399856 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div id="this-is-really-interesting-without-the-interaction-income-levels-and-sleep-time-are-all-significantly-affect-the-bmi-but-i-think-this-is-not-meaningful-here-we-treat-the-income-level-as-factors-so-the-prediction-in-this-regression-should-not-be-considered." class="section level1">
+<h1>This is really interesting, without the interaction, income levels and sleep time are all significantly affect the BMI, but I think this is not meaningful, here we treat the income level as factors, so the prediction in this regression should not be considered.</h1>
 </div>
 
 
