@@ -39,11 +39,11 @@ table(subdata1$bphigh4)
 
 Q3 <- glm(subdata1$cvdinfr4 ~ subdata1$sleptim1+subdata1$bphigh4+subdata1$smoke100+subdata1$toldhi2, data=subdata1, family = "binomial")
 summary(Q3)
-plot(Q3)
+
 
 ```
 
-#Odds of Heart Attack = e^2.713*e^(-0.0004Sleeptime)*e^(-2.21Highbloodpressure)*e^(0.6853NotSmooking)*e^(0.8988NothighbloodCholestero)
+#Odds of Heart Attack = e^2.713xe^(-0.0004Sleeptime)xe^(-2.21Highbloodpressure)xe^(0.6853NotSmooking)xe^(0.8988NothighbloodCholestero)
 #It is pretty clear that high blood pressure and smoking and blood cholesterol high are statistically significant when we predict the heart attack, 
 #Intercept mean that when a person doesn’t sleep, not high blood pressure, not smoking, not high cholesterol, the odd ratio of have heart attack is e^2.713
 #the odds ratio of having a heart attack for people with high blood pressure is 0.32
