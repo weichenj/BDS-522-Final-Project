@@ -11,7 +11,7 @@
 
 
 
-<title></title>
+<title>Question 3</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -201,33 +201,15 @@ $(document).ready(function () {
 
 
 
+<h1 class="title toc-ignore">Question 3</h1>
 
 </div>
 
 
-<div id="reserach-question-3" class="section level1">
-<h1>Reserach Question #3</h1>
-</div>
-<div id="lastly-i-want-to-know-heart-attack-acna-be-predicted-using-sleep-time-and-smoking-and-blood-pressure.-i-want-to-use-logistic-regression-to-predict-this." class="section level1">
-<h1>Lastly, I want to know heart attack acna be predicted using sleep time and smoking and blood pressure. I want to use logistic regression to predict this.</h1>
-</div>
-<div id="so-we-have-to-see-those-follow-elements" class="section level1">
-<h1>So we have to see those follow elements:</h1>
-</div>
-<div id="cvdinfr4-ever-disgonised-with-heart-attack" class="section level1">
-<h1>Cvdinfr4 : ever disgonised with heart attack</h1>
-</div>
-<div id="toldhi2-ever-told-blood-cholesterol-high" class="section level1">
-<h1>Toldhi2 :ever told blood cholesterol high</h1>
-</div>
-<div id="bphgh4-ever-told-bllod-pressure-high" class="section level1">
-<h1>Bphgh4: ever told bllod pressure high</h1>
-</div>
-<div id="spletm1how-many-hour-do-you-sleep" class="section level1">
-<h1>Spletm1:how many hour do you sleep</h1>
-</div>
-<div id="smoke100-ever-smoke-within-the-last-100-days" class="section level1">
-<h1>Smoke100: ever smoke within the last 100 days</h1>
+<div id="lastly" class="section level1">
+<h1>Lastly,</h1>
+<p>I want to know heart attack acna be predicted using sleep time and smoking and blood pressure. I want to use logistic regression to predict this.</p>
+<p>So we have to see those follow elements: #Cvdinfr4 : ever disgonised with heart attack #Toldhi2 :ever told blood cholesterol high #Bphgh4: ever told bllod pressure high #Spletm1:how many hour do you sleep #Smoke100: ever smoke within the last 100 days</p>
 <pre class="r"><code>Q3 &lt;- names(brfss2013) %in% c(&quot;cvdinfr4&quot;,&quot;smoke100&quot;,&quot;toldhi2&quot;, &quot;bphigh4&quot;, &quot;sleptim1&quot;)
 subdata &lt;- brfss2013[Q3]
 subdata$cvdinfr4 &lt;- replace(subdata$cvdinfr4, which(is.na(subdata$cvdinfr4)), &quot;No&quot;)
@@ -302,27 +284,9 @@ summary(Q3)</code></pre>
 ## AIC: 194168
 ## 
 ## Number of Fisher Scoring iterations: 6</code></pre>
-</div>
-<div id="odds-of-heart-attack-e2.713xe-0.0004sleeptimexe-2.21highbloodpressurexe0.6853notsmookingxe0.8988nothighbloodcholestero" class="section level1">
-<h1>Odds of Heart Attack = e<sup>2.713xe</sup>(-0.0004Sleeptime)xe<sup>(-2.21Highbloodpressure)xe</sup>(0.6853NotSmooking)xe^(0.8988NothighbloodCholestero)</h1>
-</div>
-<div id="it-is-pretty-clear-that-high-blood-pressure-and-smoking-and-blood-cholesterol-high-are-statistically-significant-when-we-predict-the-heart-attack" class="section level1">
-<h1>It is pretty clear that high blood pressure and smoking and blood cholesterol high are statistically significant when we predict the heart attack,</h1>
-</div>
-<div id="intercept-mean-that-when-a-person-doesnt-sleep-not-high-blood-pressure-not-smoking-not-high-cholesterol-the-odd-ratio-of-have-heart-attack-is-e2.713" class="section level1">
-<h1>Intercept mean that when a person doesn’t sleep, not high blood pressure, not smoking, not high cholesterol, the odd ratio of have heart attack is e^2.713</h1>
-</div>
-<div id="the-odds-ratio-of-having-a-heart-attack-for-people-with-high-blood-pressure-is-0.32" class="section level1">
-<h1>the odds ratio of having a heart attack for people with high blood pressure is 0.32</h1>
-</div>
-<div id="the-odds-ratio-of-having-a-heart-attack-for-people-who-smoking-in-the-last-100-days-is-15.07" class="section level1">
-<h1>the odds ratio of having a heart attack for people who smoking in the last 100 days is 15.07</h1>
-</div>
-<div id="the-odds-ratio-of-having-a-heart-attack-for-people-who-have-high-cholesterol-is-2.457" class="section level1">
-<h1>the odds ratio of having a heart attack for people who have high cholesterol is 2.457</h1>
-</div>
-<div id="what-makes-me-confused-is-that-sleep-time-does-affect-the-heart-attack-that-much-in-this-data-set-which-is-contradict-with-what-people-usually-think." class="section level1">
-<h1>What makes me confused is that sleep time does affect the heart attack that much in this data set which is contradict with what people usually think.</h1>
+<p>Here are the regression: Odds of Heart Attack = e^2.713x e^(-0.0004Sleeptime)x e^(-2.21Highbloodpressure)x e^(0.6853NotSmooking)x e^(0.8988NothighbloodCholestero)</p>
+<p>It is pretty clear that high blood pressure and smoking and blood cholesterol high are statistically significant when we predict the heart attack, Intercept mean that when a person doesn’t sleep, not high blood pressure, not smoking, not high cholesterol, the odd ratio of have heart attack is e^2.713 the odds ratio of having a heart attack for people with high blood pressure is 0.32 the odds ratio of having a heart attack for people who smoking in the last 100 days is 15.07 the odds ratio of having a heart attack for people who have high cholesterol is 2.457 What makes me confused is that sleep time does affect the heart attack that much in this data set which is different from what I thought.</p>
+<p>I think the limitations of my analyses is that heart attack must have other factors not just those varibles that I chose, so in the future, I think the regression model could be included more varibles, and I think that need more works to be done. Again, this is the data from 2013, I believe in 2018, brfss must change more and let’s wait until the data released and do the anaylsis again.</p>
 </div>
 
 

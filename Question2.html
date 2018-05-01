@@ -208,12 +208,7 @@ $(document).ready(function () {
 
 <div id="secondly" class="section level1">
 <h1>Secondly,</h1>
-</div>
-<div id="i-want-to-know-the-bmis-relation-with-physical-health-and-mental-health." class="section level1">
-<h1>I want to know the BMI’s relation with Physical health and Mental Health.</h1>
-</div>
-<div id="i-also-want-to-buid-a-regression-among-bmi-and-variable-of-income-and-sleep-time." class="section level1">
-<h1>I also want to Buid a regression among BMI and variable of Income and Sleep time.</h1>
+<p>I want to know the BMI’s relation with Physical health and Mental Health.I also want to Buid a regression among BMI and variable of Income and Sleep time.</p>
 <pre class="r"><code>ggplot(brfss2013, aes(income2, fill = X_bmi5))+geom_bar(position = &quot;stack&quot;)</code></pre>
 <p><img src="Question2_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <pre class="r"><code>summary(lm(brfss2013$X_bmi5 ~ factor(brfss2013$income2)*brfss2013$sleptim1))</code></pre>
@@ -303,15 +298,9 @@ $(document).ready(function () {
 ## F-statistic: 287.1 on 15 and 399856 DF,  p-value: &lt; 2.2e-16</code></pre>
 <pre class="r"><code>plot(lm(brfss2013$X_bmi5 ~ factor(brfss2013$income2)*brfss2013$sleptim1))</code></pre>
 <p><img src="Question2_files/figure-html/unnamed-chunk-1-2.png" width="672" /><img src="Question2_files/figure-html/unnamed-chunk-1-3.png" width="672" /><img src="Question2_files/figure-html/unnamed-chunk-1-4.png" width="672" /><img src="Question2_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
-</div>
-<div id="bmi-2931.93858.44incomeless150005.57incomeless2000016.113incomeless2500033.932incomeless3500030.643incomeless5000055.8incomeless7500010.4incomemore75000--7.003sleeptime-9.208incomeless15000sleeptime-5.905incomeless20000sleeptime-10.120incomeless25000sleeptime-15.046less35000sleeptime-14.937incomeless5000sleeptime--21.020incomelesssleeptime--25.273incomemore75000sleeptime" class="section level1">
-<h1>BMI = 2931.938+58.44<em>IncomeLess15000+5.57</em>IncomeLess20000+16.113<em>IncomeLess25000+33.932</em>IncomeLess35000+30.643<em>IncomeLess50000+55.8</em>IncomeLess75000+10.4<em>IncomeMore75000 -7.003</em>Sleeptime-9.208<em>IncomeLess15000</em>Sleeptime-5.905<em>IncomeLess20000</em>Sleeptime-10.120<em>IncomeLess25000</em>Sleeptime-15.046<em>Less35000</em>Sleeptime-14.937<em>IncomeLess5000</em>Sleeptime -21.020<em>IncomeLess</em>Sleeptime -25.273<em>IncomeMore75000</em>Sleeptime</h1>
-</div>
-<div id="from-the-regreesion-above-we-can-see-that-among-all-the-factor-only-the-income-more-than-75000-per-year-and-less-15000-per-year-indiviuals-has-positively-significance-for-bmi-and-the-interpetation-would-be-keep-the-sleeping-time-zero-hour-and-income-less-than-15000-per-year-increase-58-in-bmi-and-keep-the-sleeping-time-zero-hour-and-income-more-than-75000-per-year-increases-the-bmi-for-10.404." class="section level1">
-<h1>From the regreesion above, we can see that among all the factor, only the income more than 75000 per year and less 15000 per year indiviuals has positively significance for BMI and the interpetation would be Keep the sleeping time zero hour, and income less than $15000 per year, increase 58 in BMI, and keep the sleeping time zero hour, and income more than $75000 per year, increases the BMI for 10.404.</h1>
-</div>
-<div id="from-the-plot-we-can-see-that-the-distribtion-of-residuals-is-not-good-and-violate-our-assumption-of-regression." class="section level1">
-<h1>From the plot, we can see that the distribtion of residuals is not good, and violate our assumption of regression.</h1>
+<p>BMI = 2931.938+58.44<em>IncomeLess15000+5.57</em>IncomeLess20000+16.113<em>IncomeLess25000+33.932</em>IncomeLess35000+30.643<em>IncomeLess50000+55.8</em>IncomeLess75000+10.4<em>IncomeMore75000 -7.003</em>Sleeptime-9.208<em>IncomeLess15000</em>Sleeptime-5.905<em>IncomeLess20000</em>Sleeptime-10.120<em>IncomeLess25000</em>Sleeptime-15.046<em>Less35000</em>Sleeptime-14.937<em>IncomeLess5000</em>Sleeptime -21.020<em>IncomeLess</em>Sleeptime -25.273<em>IncomeMore75000</em>Sleeptime<br />
+From the regreesion above, we can see that among all the factor, only the income more than 75000 per year and less 15000 per year indiviuals has positively significance for BMI and the interpetation would be Keep the sleeping time zero hour, and income less than $15000 per year, increase 58 in BMI, and keep the sleeping time zero hour, and income more than $75000 per year, increases the BMI for 10.404.</p>
+<p>We can see that, BMI is hard to predict with incomelevel and sleep time interactively. From the plot, we can see that the distribtion of residuals is not good, and violate our assumption of regression.A way to improve could be clean the data, I think there are some NA could be biased for the regresssion.</p>
 <pre class="r"><code>#I want to test the regression without interaction, here is the regression
 summary(lm(brfss2013$X_bmi5 ~ factor(brfss2013$income2)+brfss2013$sleptim1))</code></pre>
 <pre><code>## 
@@ -350,9 +339,7 @@ summary(lm(brfss2013$X_bmi5 ~ factor(brfss2013$income2)+brfss2013$sleptim1))</co
 ##   (91903 observations deleted due to missingness)
 ## Multiple R-squared:  0.01031,    Adjusted R-squared:  0.01029 
 ## F-statistic: 520.9 on 8 and 399863 DF,  p-value: &lt; 2.2e-16</code></pre>
-</div>
-<div id="this-is-really-interesting-without-the-interaction-income-levels-and-sleep-time-are-all-significantly-affect-the-bmi-but-i-think-this-is-not-meaningful-here-we-treat-the-income-level-as-factors-so-the-prediction-in-this-regression-should-not-be-considered." class="section level1">
-<h1>This is really interesting, without the interaction, income levels and sleep time are all significantly affect the BMI, but I think this is not meaningful, here we treat the income level as factors, so the prediction in this regression should not be considered.</h1>
+<p>This is really interesting, without the interaction, income levels and sleep time are all significantly affect the BMI, but they all have negative effect to BMI which is confusing to me, and I think we can’t consider BMI and Income level soley, rather, we should add more varibles in the future, with interaction of course, to predict better result and more meaningful result for predicting the BMI.</p>
 </div>
 
 

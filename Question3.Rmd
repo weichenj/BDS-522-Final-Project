@@ -1,7 +1,10 @@
-#Reserach Question #3
-#Lastly, I want to know heart attack acna be predicted using sleep time and smoking and blood pressure. I want to use logistic regression to predict this.
+---
+title: "Question 3"
+---
+#Lastly, 
+I want to know heart attack acna be predicted using sleep time and smoking and blood pressure. I want to use logistic regression to predict this.
 
-#So we have to see those follow elements: 
+So we have to see those follow elements: 
 #Cvdinfr4 : ever disgonised with heart attack
 #Toldhi2 :ever told blood cholesterol high
 #Bphgh4: ever told bllod pressure high
@@ -39,15 +42,16 @@ table(subdata1$bphigh4)
 
 Q3 <- glm(subdata1$cvdinfr4 ~ subdata1$sleptim1+subdata1$bphigh4+subdata1$smoke100+subdata1$toldhi2, data=subdata1, family = "binomial")
 summary(Q3)
-
-
 ```
+Here are the regression:
+Odds of Heart Attack = e^2.713x e^(-0.0004Sleeptime)x e^(-2.21Highbloodpressure)x e^(0.6853NotSmooking)x e^(0.8988NothighbloodCholestero)
 
-#Odds of Heart Attack = e^2.713xe^(-0.0004Sleeptime)xe^(-2.21Highbloodpressure)xe^(0.6853NotSmooking)xe^(0.8988NothighbloodCholestero)
-#It is pretty clear that high blood pressure and smoking and blood cholesterol high are statistically significant when we predict the heart attack, 
-#Intercept mean that when a person doesn’t sleep, not high blood pressure, not smoking, not high cholesterol, the odd ratio of have heart attack is e^2.713
-#the odds ratio of having a heart attack for people with high blood pressure is 0.32
-#the odds ratio of having a heart attack for people who smoking in the last 100 days is 15.07
-#the odds ratio of having a heart attack for people who have high cholesterol is 2.457
-#What makes me confused is that sleep time does affect the heart attack that much in this data set which is contradict with what people usually think.
+It is pretty clear that high blood pressure and smoking and blood cholesterol high are statistically significant when we predict the heart attack, 
+Intercept mean that when a person doesn’t sleep, not high blood pressure, not smoking, not high cholesterol, the odd ratio of have heart attack is e^2.713
+the odds ratio of having a heart attack for people with high blood pressure is 0.32
+the odds ratio of having a heart attack for people who smoking in the last 100 days is 15.07
+the odds ratio of having a heart attack for people who have high cholesterol is 2.457
+What makes me confused is that sleep time does affect the heart attack that much in this data set which is different from what I thought.
+
+I think the limitations of my analyses is that heart attack must have other factors not just those varibles that I chose, so in the future, I think the regression model could be included more varibles, and I think that need more works to be done. Again, this is the data from 2013, I believe in 2018, brfss must change more and let's wait until the data released and do the anaylsis again. 
 

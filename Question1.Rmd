@@ -1,12 +1,11 @@
 ---
 title: "Question1"
 ---
-
-I think I want to see what cause difference among people’s health, and lifetime. The reason why some people live longer and better than others could be due to education, smoking, alcohol consumptions, or gender could be an effect to make difference . 
+#First,
+I think I want to see what cause difference among people’s health, and lifetime. The reason why some people live longer and better than others could be due to smoking. 
 
 research question 1: 
 ```{r}
-
 ggplot(Q1, aes(genhlth, fill = smoke100))+geom_bar(position = "stack")
 
 ```
@@ -16,4 +15,4 @@ Let's see the Chi square to test the relationship between the two varibles.
 chisq.test(genhlth,smoke100)
 ```
 
-p-value is small, which indicates that smoking is siginificant related to the general health.
+p-value is small, which indicates that smoking is siginificant related to the general health, which makes sense in real life, smoking leads to bad health.
