@@ -19,19 +19,24 @@ There are 486,303 records for 2016, by telephone survey. The November update inc
 #What are the units of analysis?
 Number of people, and score for mental health and physical health and BMI index
 #Describe each variable you are planning to use.
-For continuous variables, provide the mean, standard deviation and a histogram.
-There will be more data been selected in question 3, to see more detailed description, see question 3
+Sex, Sleeptime, income level and eudcational level, and BMI
+There will be more data been selected in question 3, to see more detailed description, see question 2 and question 3
 
 ```{r cars}
-project1 <- c(brfss2013$educa,brfss2013$sex,brfss2013$income2,brfss2013$physhlth,brfss2013$menthlth,brfss2013$X_bmi5,brfss2013$genhlth,brfss2013$smoke100)
+summary(brfss2013$sex)
+# We have more female than male, 290455 vs 201313.
 
 summary(brfss2013$sleptim1)
 #Median of the sleeptime is 7hours, Sd is around 1 hour, and I don't why there is someone says sleeping hours is 450!
+#This varible palys important role in this project.
+
 summary(brfss2013$income2)
 plot(brfss2013$income2)
-#Seesms that the distribution is left skewed which makes sesne, rich people are still minority in this country.
+#Seesms that the distribution is left skewed, which makes sesne, rich people are still minority in this country.
+
 plot(brfss2013$educa)
 #it seems that college graduted are the marjority in this data set.
+
 summary(brfss2013$X_bmi5)
 hist(brfss2013$X_bmi5)
 # The bmi index is pretty normal distributed, and the mean is 2782.

@@ -206,19 +206,20 @@ $(document).ready(function () {
 </div>
 
 
-<p>I think I want to see what cause difference among people’s health, and lifetime. The reason why some people live longer and better than others could be due to education, smoking, alcohol consumptions, or gender could be an effect to make difference .</p>
+<div id="first" class="section level1">
+<h1>First,</h1>
+<p>I think I want to see what cause difference among people’s health, and lifetime. The reason why some people live longer and better than others could be due to smoking.</p>
 <p>research question 1:</p>
 <pre class="r"><code>ggplot(Q1, aes(genhlth, fill = smoke100))+geom_bar(position = &quot;stack&quot;)</code></pre>
-<p><img src="Question1_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<pre class="r"><code>##Clearly in the Excellent and Very Good health, people who don&#39;t smoke have greater proporotion. Whihc means smoking reduce the health.
-##Let&#39;s see the Chi square to test the relationship between the two varibles.
-chisq.test(genhlth,smoke100)</code></pre>
+<p><img src="Question1_files/figure-html/unnamed-chunk-1-1.png" width="672" /> Clearly in the Excellent and Very Good health, people who don’t smoke have greater proporotion. Whihc means smoking reduce the health. Let’s see the Chi square to test the relationship between the two varibles.</p>
+<pre class="r"><code>chisq.test(genhlth,smoke100)</code></pre>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  genhlth and smoke100
 ## X-squared = 11423, df = 4, p-value &lt; 2.2e-16</code></pre>
-<p>p-value is small, which indicates that smoking is siginificant related to the general health.</p>
+<p>p-value is small, which indicates that smoking is siginificant related to the general health, which makes sense in real life, smoking leads to bad health.</p>
+</div>
 
 
 

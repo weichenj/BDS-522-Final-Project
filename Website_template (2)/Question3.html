@@ -11,7 +11,7 @@
 
 
 
-<title></title>
+<title>Question 3</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -201,33 +201,15 @@ $(document).ready(function () {
 
 
 
+<h1 class="title toc-ignore">Question 3</h1>
 
 </div>
 
 
-<div id="reserach-question-3" class="section level1">
-<h1>Reserach Question #3</h1>
-</div>
-<div id="lastly-i-want-to-know-heart-attack-acna-be-predicted-using-sleep-time-and-smoking-and-blood-pressure.-i-want-to-use-logistic-regression-to-predict-this." class="section level1">
-<h1>Lastly, I want to know heart attack acna be predicted using sleep time and smoking and blood pressure. I want to use logistic regression to predict this.</h1>
-</div>
-<div id="so-we-have-to-see-those-follow-elements" class="section level1">
-<h1>So we have to see those follow elements:</h1>
-</div>
-<div id="cvdinfr4-ever-disgonised-with-heart-attack" class="section level1">
-<h1>Cvdinfr4 : ever disgonised with heart attack</h1>
-</div>
-<div id="toldhi2-ever-told-blood-cholesterol-high" class="section level1">
-<h1>Toldhi2 :ever told blood cholesterol high</h1>
-</div>
-<div id="bphgh4-ever-told-bllod-pressure-high" class="section level1">
-<h1>Bphgh4: ever told bllod pressure high</h1>
-</div>
-<div id="spletm1how-many-hour-do-you-sleep" class="section level1">
-<h1>Spletm1:how many hour do you sleep</h1>
-</div>
-<div id="smoke100-ever-smoke-within-the-last-100-days" class="section level1">
-<h1>Smoke100: ever smoke within the last 100 days</h1>
+<div id="lastly" class="section level1">
+<h1>Lastly,</h1>
+<p>I want to know heart attack acna be predicted using sleep time and smoking and blood pressure. I want to use logistic regression to predict this.</p>
+<p>So we have to see those follow elements: #Cvdinfr4 : ever disgonised with heart attack #Toldhi2 :ever told blood cholesterol high #Bphgh4: ever told bllod pressure high #Spletm1:how many hour do you sleep #Smoke100: ever smoke within the last 100 days</p>
 <pre class="r"><code>Q3 &lt;- names(brfss2013) %in% c(&quot;cvdinfr4&quot;,&quot;smoke100&quot;,&quot;toldhi2&quot;, &quot;bphigh4&quot;, &quot;sleptim1&quot;)
 subdata &lt;- brfss2013[Q3]
 subdata$cvdinfr4 &lt;- replace(subdata$cvdinfr4, which(is.na(subdata$cvdinfr4)), &quot;No&quot;)
@@ -302,8 +284,14 @@ summary(Q3)</code></pre>
 ## AIC: 194168
 ## 
 ## Number of Fisher Scoring iterations: 6</code></pre>
-<pre class="r"><code>plot(Q3)</code></pre>
-<p><img src="Question3_files/figure-html/unnamed-chunk-1-1.png" width="672" /><img src="Question3_files/figure-html/unnamed-chunk-1-2.png" width="672" /><img src="Question3_files/figure-html/unnamed-chunk-1-3.png" width="672" /><img src="Question3_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
+<p>Here are the regression: Odds of Heart Attack = e^2.713x e^(-0.0004Sleeptime)x e^(-2.21Highbloodpressure)x e^(0.6853NotSmooking)x e^(0.8988NothighbloodCholestero)</p>
+<p>It is pretty clear that high blood pressure and smoking and blood cholesterol high are statistically significant when we predict the heart attack,</p>
+<p>Intercept mean that when a person doesn’t sleep, not high blood pressure, with smoking in the past 100 days, having high cholesterol, the odd ratio of have heart attack is e^2.713</p>
+<p>e^-1.21 is the odds of of having a heart attack for people who don’t sleep, does smoke in the past 100 days, and have high cholesterol, having high blood pressure versus not having high blood pressure.</p>
+<p>e^0.683 is the odds ratio of having a heart attack for people who don’t sleep, doesn’t have high blood pressure and have high cholesterol,not smoking in the last 100 days versus smoking in the last 100 days</p>
+<p>e^0.9066 is the odds ratio of having a heart attack for people who don’t sleep, doesn’t have high blood pressure, and do smoke, not having high cholesterol versus having cholesterol.</p>
+<p>What makes me confused is that sleep time does affect the heart attack that much in this data set which is different from what I thought.</p>
+<p>I think the limitations of my analyses is that heart attack must have other factors not just those varibles that I chose, so in the future, I think the regression model could be included more varibles, and I think that need more works to be done. Again, this is the data from 2013, I believe in 2018, brfss must change more and let’s wait until the data released and do the anaylsis again.</p>
 </div>
 
 
