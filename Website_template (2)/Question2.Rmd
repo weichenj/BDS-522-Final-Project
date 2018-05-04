@@ -21,4 +21,4 @@ From the plot, we can see that the distribtion of residuals is not good, and vio
 #I want to test the regression without interaction, here is the regression
 summary(lm(brfss2013$X_bmi5 ~ factor(brfss2013$income2)+brfss2013$sleptim1))
 ```
-This is really interesting, without the interaction, income levels and sleep time are all significantly affect the BMI, but they all have negative effect to BMI which is confusing to me, and I think we can't consider BMI and Income level soley, rather, we should add more varibles in the future, with interaction of course, to predict better result and more meaningful result for predicting the BMI.  
+This is really interesting, without the interaction, income levels and sleep time are all significantly affect the BMI, but they all have negative effect to BMI which is confusing to me, and I think we can't consider BMI and Income level soley, rather, we should add more varibles in the future, with interaction of course, to predict better result and more meaningful result for predicting the BMI. In class, we said that interactoin regression is more meaningful than simple regression without interaction.

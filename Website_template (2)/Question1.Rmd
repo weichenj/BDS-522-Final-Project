@@ -2,7 +2,7 @@
 title: "Question1"
 ---
 #First,
-I think I want to see what cause difference among people’s health, and lifetime. The reason why some people live longer and better than others could be due to smoking. 
+I want to see what causes difference among people’s health. The reason why some people live longer and better than others could be due to smoking(I don't like to somke, so just want to try something supportive for my idea)
 
 research question 1: 
 ```{r}

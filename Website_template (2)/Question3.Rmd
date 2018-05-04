@@ -2,7 +2,7 @@
 title: "Question 3"
 ---
 #Lastly, 
-I want to know heart attack acna be predicted using sleep time and smoking and blood pressure. I want to use logistic regression to predict this.
+I want to know heart attack can be or not be predicted by using sleep time and smoking and blood pressure and cholesterol. I want to use logistic regression to predict this.
 
 So we have to see those follow elements: 
 #Cvdinfr4 : ever disgonised with heart attack
@@ -32,7 +32,7 @@ summary(subdata$toldhi2)
 
 #Look at HIGH blood Pressure Data
 table(subdata$bphigh4)
-#I have to make sure that female told only during pregnancy to Yes, and told borderline or pre-hypertensive to Yes. In order to make sure logistic regression.
+#I have to make sure that female told only during pregnancy to Yes, and told borderline or pre-hypertensive to Yes. In order to make sure logistic regression and make it simplier to understand.
 subdata1 <- subdata
 subdata1$bphigh4 <- as.factor(ifelse(subdata1$bphigh4=="Yes", "Yes", (ifelse(subdata1$bphigh4=="Yes, but female told only during pregnancy", "Yes",(ifelse(subdata1$bphigh4=="Told borderline or pre-hypertensive", "Yes", "No"))))))
 table(subdata1$bphigh4)
