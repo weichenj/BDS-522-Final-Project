@@ -6,8 +6,8 @@ navbar:
     - text: "Intro"
       href: index.html
     - text: "Question 1"
-      href: Question1.html
+      href: Question_1.html
     - text: "Question 2"
-      href: Question2.html
+      href: Question_2.html
     - text: "Question 3"
-      href: Question3.html
+      href: Question_3.html
