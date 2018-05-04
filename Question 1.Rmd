@@ -15,8 +15,7 @@ ggplot(Q1, aes(genhlth, fill = smoke100))+geom_bar(position = "stack")
 Clearly in the Excellent and Very Good health, people who don't smoke have greater proporotion. Whihc means smoking reduce the health.
 Let's see the Chi square to test the relationship between the two varibles.
 ```{r}
-attach(brfss2013)
-chisq.test(genhlth,smoke100)
+chisq.test(brfss2013$genhlth,brfss2013$smoke100)
 ```
 
 p-value is small, which indicates that smoking is siginificant related to the general health, which makes sense in real life, smoking leads to bad health.

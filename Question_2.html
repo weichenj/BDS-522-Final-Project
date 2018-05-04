@@ -208,7 +208,8 @@ $(document).ready(function () {
 
 <div id="secondly" class="section level1">
 <h1>Secondly,</h1>
-<p>I want to know the BMI’s relation with Income levels.I also want to Buid a regression among BMI and variable of Income and Sleep time.</p>
+<p>I want to know the BMI’s relation with income levels.I also want to build a regression among BMI and variable of income and sleep time. Many studies have suggested that obesity prevalence varies by income and educational level, although patterns might differ between high-income and low-income countries</p>
+<p>Cite: Ogden CL, Fakhouri TH, Carroll MD, et al. Prevalence of Obesity Among Adults, by Household Income and Education — United States, 2011–2014. MMWR Morbidity and Mortality Weekly Report. 2017;66(50):1369-1373. <a href="doi:10.15585/mmwr.mm6650a1" class="uri">doi:10.15585/mmwr.mm6650a1</a>.</p>
 <pre class="r"><code>ggplot(brfss2013, aes(income2, fill = X_bmi5))+geom_bar(position = &quot;stack&quot;)</code></pre>
 <p><img src="Question_2_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <pre class="r"><code>summary(lm(brfss2013$X_bmi5 ~ factor(brfss2013$income2)*brfss2013$sleptim1))</code></pre>
