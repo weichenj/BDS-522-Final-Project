@@ -12,6 +12,10 @@ load("brfss2013.RData")
 ##1,What is the data source?
 The Behavioral Risk Factor Surveillance System (BRFSS) is the nation’s premier system of health-related telephone surveys that collect state data about U.S. residents regarding their health-related risk behaviors, chronic health conditions, and use of preventive services. 
 
+According to Laflamme and VanDerslice, "the Behavioral Risk Factor Surveillance System (BRFSS) provides a good opportunity to implement tracking of exposure-related behaviors. Washington State has used the BRFSS to collection information on environmentally related knowledge, attitudes, and behaviors. In this article we present case studies of modules covering drinking water, perceptions of environmental risk, and radon awareness and testing. Data on exposure-related behaviors have been useful for population exposure assessments and program evaluation. " My research quqestions are all based on the same data, but test different varibles.
+
+Laflamme DM, VanDerslice JA. Using the Behavioral Risk Factor Surveillance System (BRFSS) for Exposure Tracking: Experiences from Washington State. Environmental Health Perspectives. 2004;112(14):1428-1433. doi:10.1289/ehp.7148.
+
 ##2,When were the data collected?
 The Newest one is 2016, but I only find the Rdata from 2013
 

@@ -11,7 +11,7 @@
 
 
 
-<title>My Website</title>
+<title>Intro</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -201,12 +201,40 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">My Website</h1>
+<h1 class="title toc-ignore">Intro</h1>
 
 </div>
 
 
-<p>Hello, Website!</p>
+<div id="what-is-the-data-source" class="section level2">
+<h2>1,What is the data source?</h2>
+<p>The Behavioral Risk Factor Surveillance System (BRFSS) is the nation’s premier system of health-related telephone surveys that collect state data about U.S. residents regarding their health-related risk behaviors, chronic health conditions, and use of preventive services.</p>
+<p>According to Laflamme and VanDerslice, “the Behavioral Risk Factor Surveillance System (BRFSS) provides a good opportunity to implement tracking of exposure-related behaviors. Washington State has used the BRFSS to collection information on environmentally related knowledge, attitudes, and behaviors. In this article we present case studies of modules covering drinking water, perceptions of environmental risk, and radon awareness and testing. Data on exposure-related behaviors have been useful for population exposure assessments and program evaluation.” My research quqestions are all based on the same data, but test different varibles.</p>
+<p>Laflamme DM, VanDerslice JA. Using the Behavioral Risk Factor Surveillance System (BRFSS) for Exposure Tracking: Experiences from Washington State. Environmental Health Perspectives. 2004;112(14):1428-1433. <a href="doi:10.1289/ehp.7148" class="uri">doi:10.1289/ehp.7148</a>.</p>
+</div>
+<div id="when-were-the-data-collected" class="section level2">
+<h2>2,When were the data collected?</h2>
+<p>The Newest one is 2016, but I only find the Rdata from 2013</p>
+</div>
+<div id="how-were-they-collected" class="section level2">
+<h2>3,How were they collected?</h2>
+<p>There are 486,303 records for 2016, by telephone survey. The November update includes recoding of responses for a variable (LASTDEN3) in California’s data and a calculated variable (_RFPAP33) set to missing in eight states which did not ask a question (HADHYST2) correctly for eight months.</p>
+<p>Here are some varibles I will use, but more details of atucal varibles I am going to use will be presented at each section.</p>
+<pre class="r"><code>project1 &lt;- c(brfss2013$educa,brfss2013$sex,brfss2013$income2,brfss2013$physhlth,brfss2013$menthlth,brfss2013$X_bmi5,brfss2013$genhlth,brfss2013$smoke100)
+summary(brfss2013$sleptim1)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##   0.000   6.000   7.000   7.052   8.000 450.000    7387</code></pre>
+<pre class="r"><code>summary(brfss2013$genhlth)</code></pre>
+<pre><code>## Excellent Very good      Good      Fair      Poor      NA&#39;s 
+##     85482    159076    150555     66726     27951      1985</code></pre>
+<pre class="r"><code>plot(brfss2013$genhlth)</code></pre>
+<p><img src="index_files/figure-html/cars-1.png" width="672" /></p>
+<pre class="r"><code>summary(brfss2013$X_bmi5)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##       1    2367    2663    2782    3081    9769   26727</code></pre>
+<pre class="r"><code>hist(brfss2013$X_bmi5)#BMI is pretty normal distributed</code></pre>
+<p><img src="index_files/figure-html/cars-2.png" width="672" /></p>
+</div>
 
 
 
